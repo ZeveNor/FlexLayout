@@ -83,28 +83,7 @@
       }
     }
 
-    @media screen and (max-width: 520px) {
-      .content2>div {
-        flex-direction: column;
-      }
-
-      .content2>div>div {
-        min-height: 200px;
-      }
-
-      .content1 img {
-        width: 100%;
-        height: auto;
-      }
-
-      .donut-chart {
-        width: 100%;
-        height: auto;
-        max-width: 280px;
-        max-height: 280px;
-      }
-    }
-
+    
     .card-header {
       font-weight: bold;
       color: #46537b;
@@ -127,6 +106,8 @@
       border: #f8f2f2 solid 1px;
       position: relative;
       display: flex;
+      width: 280px;
+      height: 280px;
       justify-content: center;
       align-items: center;
     }
@@ -137,6 +118,29 @@
       font-weight: 600;
       color: #f70a55;
     }
+
+    @media (max-width: 520px) {
+      .content2>div {
+        flex-direction: column;
+      }
+
+      .content2>div>div {
+        min-height: 200px;
+      }
+
+      .content1 img {
+        width: 100%;
+        height: auto;
+      }
+
+      .donut-chart {
+        width: 150px;
+        height: 150px; 
+        max-width: 280px;
+        max-height: 280px;
+      }
+    }
+
 
     .footer-card {
       width: 100%;
@@ -160,7 +164,6 @@
 
     .footer-box ul {
       list-style: none;
-      
       width: 100%;
       justify-content: space-between;
       display: flex;
@@ -234,30 +237,27 @@
 
       <div class="content2">
         <div class="subcontent1">
-          <div>
-            <div class="info-box" style="justify-content: center;">
+          <div class="info-box" style="justify-content: center;">
               <div class="donut-chart"
-                style="width: 280px; height: 280px; background: conic-gradient(#fa0404 0% 30%, #ffffffa9 30% 100%);">
+                style=" background: conic-gradient(#fa0404 0% 30%, #ffffffa9 30% 100%);">
               </div>
-            </div>
           </div>
-          <div>
-            <div class="info-box" style="justify-content: center;">
-              <div class="donut-chart"
-                style="width: 280px; height: 280px; background: conic-gradient(#fa62f2 0% 80%, #ffffffa9 80% 100%);">
-              </div>
+          
+          <div class="info-box" style="justify-content: center;">
+            <div class="donut-chart"
+              style="background: conic-gradient(#fa62f2 0% 80%, #ffffffa9 80% 100%);">
             </div>
           </div>
         </div>
         <div class="subcontent2">
           <div class="info-box">
             <div class="donut-chart"
-              style=" width: 280px; height: 280px; background: conic-gradient(#3802ff 0% 10%, #ffffffa9 10% 100%);">
+              style="  background: conic-gradient(#3802ff 0% 10%, #ffffffa9 10% 100%);">
             </div>
           </div>
           <div class="info-box">
             <div class="donut-chart"
-              style=" width: 280px; height: 280px; background: conic-gradient(#ff0151 0% 40%, #ffffffa9 40% 100%);">
+              style=" background: conic-gradient(#ff0151 0% 40%, #ffffffa9 40% 100%);">
             </div>
           </div>
         </div>
