@@ -14,7 +14,7 @@
     }
 
     body {
-      background:  rgb(67, 66, 66);
+      background: rgb(67, 66, 66);
     }
 
     .wrapper {
@@ -22,7 +22,6 @@
       padding: 15px;
       display: flex;
       flex-direction: column;
-      flex-wrap: wrap;
       gap: 15px;
       font-size: 20px;
       font-family: sans-serif;
@@ -31,7 +30,7 @@
     .header,
     .footer,
     .content1,
-    .content2 > div > div {
+    .content2>div>div {
       flex: 1;
       display: flex;
       justify-content: center;
@@ -63,11 +62,16 @@
 
     @media screen and (max-width: 800px) {
       .main-container {
-        min-height: 400px;
+        flex-direction: column;
       }
 
       .content1 {
         flex: 100%;
+        order: 2;
+      }
+
+      .content2 {
+        order: 1;
       }
 
       .header {
@@ -86,6 +90,18 @@
 
       .content2>div>div {
         min-height: 200px;
+      }
+
+      .content1 img {
+        width: 100%;
+        height: auto;
+      }
+
+      .donut-chart {
+        width: 100%;
+        height: auto;
+        max-width: 280px;
+        max-height: 280px;
       }
     }
 
@@ -122,50 +138,72 @@
       color: #f70a55;
     }
 
-.footer-card{
-  width: 100%;
-  color: #ffffff;
-  padding: 10px 0;
-  padding-top: 40px;
-  text-decoration: none;
-  background-color: rgba(3, 3, 3, 0.786);
-  border-bottom: solid rgb(239, 169, 255) 10px;
-}
+    .footer-card {
+      width: 100%;
+      color: #ffffff;
+      padding: 10px 0;
+      background-color: rgba(3, 3, 3, 0.786);
+      border-bottom: solid rgb(239, 169, 255) 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-.footer-card .footer-box{
-  display: block;
-  height: 70px;
-  padding: 10px 50px;
-  align-items: center;
-  justify-content: center;
-}
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px 50px;
+      flex-wrap: wrap;
+    }
 
-.footer-card .footer-box .footer-left{
-  float: left !important;
-}
+    .footer-box ul {
+      list-style: none;
+      
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-.footer-card .footer-box .footer-right{
-  float: right !important;
-}
+    .footer-box ul li {
+      margin-right: 20px;
+    }
 
-.footer-box ul{
-  list-style: none;
-}
+    .footer-box ul li a {
+      color: #ffffff;
+      font-size: 19px;
+      text-decoration: none;
+    }
 
-.footer-box ul li a{
-  padding-right: 20px;
-  color: #ffffff;
-  font-size: 19px;
-  text-decoration: none;
-}
+    .footer-box ul li a:hover {
+      color: #000000;
+    }
 
-.footer-box ul li a:hover{
-  color: #000000;
-}
+    .footer-box ul li i {
+      font-size: 30px;
+    }
 
-.footer-box ul li i{
-  font-size: 30px;
-}
+    @media screen and (max-width: 520px) {
+      .footer-box {
+        padding: 10px;
+      }
+
+      .footer-box ul {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-box ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-box ul li a {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -175,7 +213,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" style="color: white; margin-left: 20px;">Flexbox Layout</a>
         <form class="d-flex" role="search">
-          <input class="form-control me-4"  type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" style="margin-right: 20px;" type="submit">Search</button>
         </form>
       </div>
@@ -183,9 +221,9 @@
 
     <div class="main-container">
       <div class="content1 bg-light p-3">
-        <div class="info-box">
+        <div style="justify-content: center;" class="info-box">
           <div>
-            <img alt="chart"
+            <img alt="chart" style="max-width: 100%; height: auto;"
               src="https://quickchart.io/chart?c={type:'line',data:{labels:['January','February','March','April','May'],datasets:[{label:'Income',data:[50,60,70,180,190],fill:false,borderColor:'red'},{label:'Fund',data:[100,200,300,400,500],fill:false,borderColor:'orange'},{label:'Coin',data:[10,350,100,200,700],fill:false,borderColor:'yellow'}]}}">
           </div>
           <div class="icon">
@@ -198,13 +236,15 @@
         <div class="subcontent1">
           <div>
             <div class="info-box" style="justify-content: center;">
-              <div class="donut-chart" style="width: 280px; height: 280px; background: conic-gradient(#fa0404 0% 30%, #ffffffa9 30% 100%);">
+              <div class="donut-chart"
+                style="width: 280px; height: 280px; background: conic-gradient(#fa0404 0% 30%, #ffffffa9 30% 100%);">
               </div>
             </div>
           </div>
           <div>
             <div class="info-box" style="justify-content: center;">
-              <div class="donut-chart" style="width: 280px; height: 280px; background: conic-gradient(#fa62f2 0% 80%, #ffffffa9 80% 100%);">
+              <div class="donut-chart"
+                style="width: 280px; height: 280px; background: conic-gradient(#fa62f2 0% 80%, #ffffffa9 80% 100%);">
               </div>
             </div>
           </div>
@@ -218,34 +258,26 @@
           <div class="info-box">
             <div class="donut-chart"
               style=" width: 280px; height: 280px; background: conic-gradient(#ff0151 0% 40%, #ffffffa9 40% 100%);">
-            </div> 
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="text-white">
-      <div class="footer-card">
-        <div class="footer-box engFont">
-          <ul>
-            <li>
-              <a class="footer-right">
-                <img
-                  src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FZeveNorFlex&label=VISITOR%20TOTAL&labelColor=%23000000&countColor=%23dce775"
-                  alt="website-counter" />
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ZeveNor" class="footer-left"><i class="fa fa-github"></i></a>
-            </li>
-            <li>
-              <a href="https://github.com/ZeveNor" class="footer-left" style="font-size: 14px; line-height: 35px">© 2024
-                Powered By github.com/Zevenor.</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <p></p>
+    <div class="footer-card">
+      <div class="footer-box engFont">
+        <ul>
+          <li>
+            <a href="https://github.com/ZeveNor" class="footer-left" style="font-size: 14px; line-height: 35px">© 2024
+              Powered By github.com/Zevenor.</a>
+          </li>
+          <li>
+            <a class="footer-right">
+              <img
+                src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FZeveNorFlex&label=VISITOR%20TOTAL&labelColor=%23000000&countColor=%23dce775"
+                alt="website-counter" />
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
